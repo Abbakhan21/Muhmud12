@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claim Your Free Airtel Airtime — Naija Recharge Giveaway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0A;
+    --yellow:#E31E24;
+    --gold:#E31E24;
+    --gold-soft:#FF5A5F;
+    --cream:#FFF8F8;
+    --coral:#E31E24;
+    --line: rgba(255,248,248,0.14);
+    /* legacy aliases so existing rules keep working */
+    --green: #1A0505;
+    --green-deep: #260707;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--ink);
+    color: var(--cream);
+    font-family:'Manrope', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:480px; margin:0 auto; position:relative;}
+
+  /* ---------- top strip ---------- */
+  .topstrip{
+    background: var(--gold);
+    color: var(--ink);
+    font-weight:800;
+    font-size:0.78rem;
+    text-align:center;
+    padding:8px 12px;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    padding:18px 20px 4px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    display:flex; align-items:center; gap:8px;
+    font-weight:800; font-size:1.05rem;
+  }
+  .brand-badge{
+    width:30px; height:30px; border-radius:8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink); font-weight:800; font-size:0.9rem;
+  }
+  .live-pill{
+    display:flex; align-items:center; gap:6px;
+    font-size:0.7rem; font-weight:700; color:var(--cream);
+    background: rgba(255,246,224,0.08);
+    border:1px solid var(--line);
+    padding:5px 10px; border-radius:999px;
+  }
+  .dot{width:7px; height:7px; border-radius:50%; background:#3CDB7F; box-shadow:0 0 0 0 rgba(60,219,127,0.6); animation:pulse 1.6s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(60,219,127,0.55);}
+    70%{box-shadow:0 0 0 7px rgba(60,219,127,0);}
+    100%{box-shadow:0 0 0 0 rgba(60,219,127,0);}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:22px 20px 10px;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:0.72rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;
+    color: var(--gold-soft);
+    background: rgba(242,183,5,0.1);
+    border:1px solid rgba(242,183,5,0.35);
+    padding:6px 12px; border-radius:999px;
+    margin-bottom:16px;
+  }
+  h1{
+    font-size:2.1rem;
+    font-weight:700;
+    line-height:1.12;
+    color: var(--cream);
+  }
+  h1 span{color: var(--gold);}
+  .subhead{
+    margin-top:14px;
+    font-size:0.98rem;
+    color: rgba(255,246,224,0.72);
+    padding:0 8px;
+  }
+
+  /* ---------- scratch card (signature element) ---------- */
+  .card-stage{
+    margin:28px auto 6px;
+    width:270px; height:270px;
+    position:relative;
+    perspective:1000px;
+  }
+  .card{
+    width:100%; height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    animation: cardFloat 3.4s ease-in-out infinite;
+  }
+  @keyframes cardFloat{
+    0%,100%{transform:translateY(0) rotate(-1.5deg);}
+    50%{transform:translateY(-10px) rotate(1.5deg);}
+  }
+  .card-face{
+    position:absolute; inset:0;
+    border-radius:20px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  }
+  .card-front{
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.14), transparent 45%),
+      linear-gradient(155deg, var(--green) 0%, var(--green-deep) 100%);
+    border:1px solid rgba(255,246,224,0.15);
+  }
+  .chip{
+    width:40px; height:30px; border-radius:6px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    position:absolute; top:22px; left:22px;
+    opacity:0.9;
+  }
+  .card-amount{
+    font-size:2.6rem; font-weight:700; color:var(--cream);
+  }
+  .card-amount sup{font-size:1.1rem; top:-1.1em; color:var(--gold-soft);}
+  .card-label{
+    margin-top:4px;
+    font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    color: rgba(255,246,224,0.65);
+  }
+  .scratch-hint{
+    position:absolute; bottom:16px; left:0; right:0;
+    text-align:center;
+    font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color: rgba(255,246,224,0.5);
+  }
+  .shimmer{
+    position:absolute; inset:0; border-radius:20px; overflow:hidden; pointer-events:none;
+  }
+  .shimmer::after{
+    content:"";
+    position:absolute; top:0; left:-60%;
+    width:50%; height:100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,0.22), transparent);
+    animation: sweep 2.8s ease-in-out infinite;
+  }
+  @keyframes sweep{
+    0%{left:-60%;}
+    55%{left:120%;}
+    100%{left:120%;}
+  }
+
+  /* ---------- countdown ---------- */
+  .countdown-wrap{
+    margin:26px 20px 4px;
+    background: rgba(255,246,224,0.06);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px 16px;
+    text-align:center;
+  }
+  .countdown-label{
+    font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color: rgba(255,246,224,0.6);
+    margin-bottom:10px;
+  }
+  .countdown{
+    display:flex; justify-content:center; gap:10px;
+  }
+  .time-box{
+    background: var(--green-deep);
+    border:1px solid rgba(255,246,224,0.12);
+    border-radius:10px;
+    padding:8px 0;
+    width:56px;
+  }
+  .time-num{font-size:1.3rem; font-weight:700; color:var(--gold-soft); font-family:'Space Grotesk';}
+  .time-unit{font-size:0.62rem; color:rgba(255,246,224,0.55); text-transform:uppercase; letter-spacing:0.05em;}
+
+  /* ---------- CTA ---------- */
+  .cta-primary{
+    display:block;
+    margin:22px 20px 10px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color: var(--ink);
+    text-align:center;
+    font-weight:800;
+    font-size:1.02rem;
+    padding:16px 20px;
+    border-radius:14px;
+    text-decoration:none;
+    box-shadow: 0 12px 30px rgba(242,183,5,0.28);
+    transition: transform 0.15s ease;
+  }
+  .cta-primary:active{transform:scale(0.97);}
+  .cta-sub{
+    text-align:center; font-size:0.75rem; color:rgba(255,246,224,0.5);
+    margin-bottom:6px;
+  }
+
+  /* ---------- networks ---------- */
+  .networks{
+    display:flex; justify-content:center; gap:10px;
+    flex-wrap:wrap;
+    margin:18px 20px 6px;
+  }
+  .net-badge{
+    font-size:0.72rem; font-weight:800;
+    padding:7px 12px; border-radius:999px;
+    border:1px solid var(--line);
+    color: rgba(255,246,224,0.85);
+  }
+  .net-airtel{
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+    font-size:0.8rem;
+    padding:9px 16px;
+  }
+
+  /* ---------- section divider ---------- */
+  .section{padding:34px 20px 10px;}
+  .section-title{
+    font-size:1.35rem; font-weight:700; text-align:center; margin-bottom:6px;
+  }
+  .section-sub{
+    text-align:center; font-size:0.88rem; color:rgba(255,246,224,0.6);
+    margin-bottom:24px;
+  }
+
+  /* ---------- steps ---------- */
+  .steps{display:flex; flex-direction:column; gap:14px;}
+  .step{
+    display:flex; gap:14px; align-items:flex-start;
+    background: rgba(255,246,224,0.045);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 16px;
+  }
+  .step-num{
+    flex-shrink:0;
+    width:32px; height:32px; border-radius:9px;
+    background: var(--green);
+    color:var(--cream); font-weight:800; font-family:'Space Grotesk';
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.95rem;
+  }
+  .step-title{font-weight:700; font-size:0.95rem; margin-bottom:2px;}
+  .step-body{font-size:0.85rem; color:rgba(255,246,224,0.62);}
+
+  /* ---------- live ticker ---------- */
+  .ticker-wrap{
+    margin:8px 0;
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  .ticker{
+    display:flex; gap:28px;
+    white-space:nowrap;
+    animation: tickerScroll 16s linear infinite;
+    width:max-content;
+  }
+  @keyframes tickerScroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  .ticker-item{
+    font-size:0.8rem; color:rgba(255,246,224,0.7);
+    display:flex; align-items:center; gap:6px;
+  }
+  .ticker-item b{color:var(--gold-soft);}
+
+  /* ---------- stats ---------- */
+  .stats{
+    display:flex; justify-content:space-between;
+    margin:26px 20px;
+    text-align:center;
+  }
+  .stat-num{font-size:1.5rem; font-weight:700; color:var(--gold-soft); font-family:'Space Grotesk';}
+  .stat-label{font-size:0.68rem; color:rgba(255,246,224,0.55); text-transform:uppercase; letter-spacing:0.05em; margin-top:2px;}
+
+  /* ---------- faq ---------- */
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:14px 4px;
+  }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center;
+    font-weight:700; font-size:0.92rem; cursor:pointer;
+  }
+  .faq-icon{font-size:1.1rem; color:var(--gold-soft); transition:transform 0.2s;}
+  .faq-a{
+    font-size:0.85rem; color:rgba(255,246,224,0.62);
+    max-height:0; overflow:hidden; transition: max-height 0.3s ease;
+  }
+  .faq-item.open .faq-a{max-height:200px; margin-top:8px;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:26px 20px 100px;
+    text-align:center;
+    font-size:0.72rem;
+    color: rgba(255,246,224,0.4);
+  }
+  footer a{text-decoration:underline;}
+
+  /* ---------- sticky mobile CTA ---------- */
+  .sticky-cta{
+    position:fixed; bottom:0; left:0; right:0;
+    max-width:480px; margin:0 auto;
+    background: var(--green-deep);
+    border-top:1px solid var(--line);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    display:flex; align-items:center; gap:12px;
+    z-index:50;
+  }
+  .sticky-info{flex:1;}
+  .sticky-amount{font-weight:800; font-size:0.95rem; color:var(--gold-soft);}
+  .sticky-note{font-size:0.68rem; color:rgba(255,246,224,0.55);}
+  .sticky-btn{
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color:var(--ink); font-weight:800; font-size:0.85rem;
+    padding:11px 18px; border-radius:10px; text-decoration:none; white-space:nowrap;
+  }
+
+  @media (min-width:481px){
+    .wrap{border-left:1px solid var(--line); border-right:1px solid var(--line);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topstrip">🎉 AIRTEL-NETWORK RECHARGE WEEK — FREE AIRTIME GIVEAWAY LIVE NOW</div>
+
+  <header>
+    <div class="brand">
+      <div class="brand-badge">₦</div>
+      NaijaRecharge
+    </div>
+    <div class="live-pill"><span class="dot"></span> 2,481 online</div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">100% Free · No Card Details</span>
+    <h1>Every Airtel line gets <span>free airtime</span> today</h1>
+    <p class="subhead">A red-week recharge promo for Airtel numbers, run by NaijaRecharge — claim yours before today's batch runs out.</p>
+
+    <div class="card-stage">
+      <div class="card">
+        <div class="card-face card-front">
+          <div class="chip"></div>
+          <div class="card-amount">₦<span id="cardAmount">500</span></div>
+          <div class="card-label">Airtime Voucher</div>
+          <div class="shimmer"></div>
+          <div class="scratch-hint">Tap claim below to reveal yours</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="countdown-wrap">
+      <div class="countdown-label">Today's giveaway closes in</div>
+      <div class="countdown">
+        <div class="time-box"><div class="time-num" id="hh">02</div><div class="time-unit">Hrs</div></div>
+        <div class="time-box"><div class="time-num" id="mm">14</div><div class="time-unit">Min</div></div>
+        <div class="time-box"><div class="time-num" id="ss">39</div><div class="time-unit">Sec</div></div>
+      </div>
+    </div>
+
+    <a href="https://nsecj.bid/cl/c2229bb69654deb0" class="cta-primary">Claim My Free Airtime →</a>
+    <div class="cta-sub">Takes less than 60 seconds · No app download</div>
+
+    <div class="networks">
+      <span class="net-badge net-airtel">✓ Airtel lines eligible</span>
+    </div>
+  </section>
+
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker"></div>
+  </div>
+
+  <section class="section" id="claim">
+    <h2 class="section-title">How to claim</h2>
+    <p class="section-sub">Three quick steps. Your airtime lands straight on your line.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Enter your phone number</div>
+          <div class="step-body">Tell us which network you're on so we can match the right offer to your line.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Confirm you're not a robot</div>
+          <div class="step-body">A quick one-tap check keeps the giveaway fair for real people.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Get credited</div>
+          <div class="step-body">Airtime is sent within minutes. You'll get a confirmation SMS.</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://nsecj.bid/cl/c2229bb69654deb0" class="cta-primary" style="margin-left:0; margin-right:0;">Start My Claim →</a>
+  </section>
+
+  <div class="stats">
+    <div>
+      <div class="stat-num">₦2.4M+</div>
+      <div class="stat-label">Given out</div>
+    </div>
+    <div>
+      <div class="stat-num">18,900</div>
+      <div class="stat-label">Claims today</div>
+    </div>
+    <div>
+      <div class="stat-num">4.8/5</div>
+      <div class="stat-label">User rating</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this actually free? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. There's no payment, card, or subscription required to claim your airtime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which networks are supported? <span class="faq-icon">+</span></div>
+        <div class="faq-a">This round is open to Airtel lines only. Follow us for when other networks join.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long until I receive it? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Most claims are credited within a few minutes of completing the steps above.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I claim more than once? <span class="faq-icon">+</span></div>
+        <div class="faq-a">One claim per phone number per day, so everyone gets a fair chance.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    NaijaRecharge is an independent promo run and is not affiliated with or operated by Airtel Nigeria. "Airtel" refers only to the network eligible for this offer. Promotional offer, availability limited to daily allocation. By claiming you agree to receive one confirmation SMS.
+  </footer>
+
+  <div class="sticky-cta">
+    <div class="sticky-info">
+      <div class="sticky-amount">₦500 Airtel airtime waiting</div>
+      <div class="sticky-note">Offer closes soon</div>
+    </div>
+    <a href="https://nsecj.bid/cl/c2229bb69654deb0" class="sticky-btn">Claim now</a>
+  </div>
+
+</div>
+
+<script>
+  // Countdown timer
+  let totalSeconds = 2*3600 + 14*60 + 39;
+  const hhEl = document.getElementById('hh');
+  const mmEl = document.getElementById('mm');
+  const ssEl = document.getElementById('ss');
+  setInterval(() => {
+    if(totalSeconds <= 0){ totalSeconds = 2*3600 + 14*60 + 39; }
+    totalSeconds--;
+    const h = Math.floor(totalSeconds/3600);
+    const m = Math.floor((totalSeconds%3600)/60);
+    const s = totalSeconds%60;
+    hhEl.textContent = String(h).padStart(2,'0');
+    mmEl.textContent = String(m).padStart(2,'0');
+    ssEl.textContent = String(s).padStart(2,'0');
+  }, 1000);
+
+  // Rotating card amount
+  const amounts = [500, 1000, 200, 750];
+  let ai = 0;
+  const cardAmountEl = document.getElementById('cardAmount');
+  setInterval(() => {
+    ai = (ai+1) % amounts.length;
+    cardAmountEl.textContent = amounts[ai];
+  }, 3200);
+
+  // Live ticker content, duplicated for seamless loop
+  const names = ["Chidera","Abubakar","Ngozi","Emeka","Fatima","Tunde","Amaka","Ibrahim","Chinwe","Sadiq","Blessing","Yusuf"];
+  function randItem(arr){return arr[Math.floor(Math.random()*arr.length)];}
+  let tickerHTML = "";
+  for(let i=0;i<14;i++){
+    const amt = randItem([100,200,500,750,1000]);
+    tickerHTML += `<div class="ticker-item">🎁 <b>${randItem(names)}</b> just claimed ₦${amt} Airtel airtime</div>`;
+  }
+  document.getElementById('ticker').innerHTML = tickerHTML + tickerHTML;
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
